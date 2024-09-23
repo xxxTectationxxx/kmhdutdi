@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery KMHD UTDI</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <style>
+      .text-container {
+        text-align: center;
+      }
+
+      .card {
+        border: none;
+        box-shadow: none;
+      }
+
+      .card-body {
+        min-height: 10rem;
+      }
+
+      /* Loader Spinner */
+      .loader {
+        border: 4px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 4px solid #3498db;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Hide loader when images are loaded */
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="bg-gray-800">
+      <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div class="relative flex items-center justify-between h-16">
+          <div class="absolute inset-y-0 left-0 flex items-left sm:hidden">
+            <!-- Mobile menu button -->
+            <button
+              type="button"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+              id="mobile-menu-button"
+            >
+              <span class="sr-only">Open main menu</span>
+              <!-- Icon when menu is closed. -->
+              <svg
+                class="block h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+              <!-- Icon when menu is open. -->
+              <svg
+                class="hidden h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Logo aligned center on small screens, left on large screens -->
+          <div class="flex-1 flex items-center justify-center sm:justify-start">
+            <div class="flex-shrink-0 text-white text-lg font-bold">
+              KMHD UTDI
+            </div>
+          </div>
+
+          <!-- Navigation items, aligned to the right on large screens -->
+          <div class="hidden sm:block sm:ml-6 lg:ml-auto">
+            <div class="flex space-x-4">
+              <!-- Menu items -->
+              <a
+                href="../index.html"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >Home</a
+              >
+              <a
+                href="../about/index.html"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >About</a
+              >
+              <a
+                href="#"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >Gallery</a
+              >
+              <a
+                href="https://www.instagram.com/kmhd.utdi/"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >Contact</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu, hidden by default -->
+      <div class="sm:hidden hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          <a
+            href="../index.html"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >Home</a
+          >
+          <a
+            href="../about/index.html"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >About</a
+          >
+          <a
+            href="#"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >Gallery</a
+          >
+          <a
+            href="https://www.instagram.com/kmhd.utdi/"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Judul My Gallery -->
+    <div class="container mx-auto text-center my-10">
+      <h1 class="text-4xl font-bold text-gray-800">My Gallery</h1>
+    </div>
+
+    <!-- Sub-judul Anggota -->
+    <div class="container mx-auto text-center mb-10">
+      <h3 class="text-2xl font-semibold text-gray-600">Anggota</h3>
+    </div>
+
+    <div class="container mt-4">
+      <div class="row">
+        <!-- Card 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="card p-4">
+            <div class="loader"></div>
+            <img
+              src="../asset/img/gallery/lintang.JPG"
+              class="card-img-top"
+              alt="Gambar 1"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h5 class="font-bold card-title text-center mb-2">
+                Gusti Ngurah Lintang Pamungkas
+              </h5>
+              <p class="italic card-text text-center mx-4">
+                "Tidak Ada Yang Instan Di Dunia Ini, Jadi Jalani Prosesnya Agar
+                Bisa Menikmati Hasilnya"
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="card p-4">
+            <div class="loader"></div>
+            <img
+              src="../asset/img/gallery/yoga.JPG"
+              class="card-img-top"
+              alt="Gambar 2"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h5 class="font-bold card-title text-center mb-2">
+                I Nyoman Prayoga Aditya Dharma
+              </h5>
+              <p class="italic card-text text-center mx-4">
+                " Jadilah orang berilmu yang mengilmukan orang lain. Jadilah
+                orang cerdas yang mencerdaskan orang lain. Orang sukses yang
+                mensukseskan orang lain "
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="card p-4">
+            <div class="loader"></div>
+            <img
+              src="../asset/img/gallery/fierish.JPG"
+              class="card-img-top"
+              alt="Gambar 3"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h5 class="font-bold card-title text-center mb-2">
+                I Gede Agus Fierish Ananta
+              </h5>
+              <p class="italic card-text text-center mx-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+                odio asperiores blanditiis voluptates quo consequuntur eum nisi,
+                a numquam nihil.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Card 4 -->
+        <div class="col-md-4 mb-4">
+          <div class="card p-4">
+            <div class="loader"></div>
+            <img
+              src="../asset/img/gallery/bintang.JPG"
+              class="card-img-top"
+              alt="Gambar 4"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h5 class="font-bold card-title text-center mb-2">
+                I Gede Nengah Bintang Arta Jaya
+              </h5>
+              <p class="italic card-text text-center mx-4">
+                " Kalau kamu capek, sama aku juga, namanya juga hidup "
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="col-md-4 mb-4">
+          <div class="card p-4">
+            <div class="loader"></div>
+            <img
+              src="../asset/img/gallery/gilang.JPG"
+              class="card-img-top"
+              alt="Gambar 5"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h5 class="font-bold card-title text-center mb-2">
+                I Putu Gede Gilang Teja Krishna
+              </h5>
+              <p class="italic card-text text-center mx-4">
+                " Kenali apa yang kamu suka, Lalu lakukan, Jangan terbiasa hidup
+                dengan dikte orang lain "
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="col-md-4 mb-4">
+          <div class="card p-4">
+            <div class="loader"></div>
+            <img
+              src="../asset/img/gallery/agustina.JPG"
+              class="card-img-top"
+              alt="Gambar 6"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h5 class="font-bold card-title text-center mb-2">
+                I Dewa Gede Agustina Dharma Putra
+              </h5>
+              <p class="italic card-text text-center mx-4">
+                " Tidak ada yang instan di dunia ini, Jadi jalani prosesnya
+                untuk bisa menikmati hasilnya "
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="col-md-4 mb-4">
+          <div class="card p-4">
+            <div class="loader"></div>
+            <img
+              src="../asset/img/gallery/yoga.JPG"
+              class="card-img-top"
+              alt="Gambar 7"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h5 class="font-bold card-title text-center mb-2">
+                Angga Wijaya
+              </h5>
+              <p class="italic card-text text-center mx-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+                odio asperiores blanditiis voluptates quo consequuntur eum nisi,
+                a numquam nihil.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="col-md-4 mb-4">
+          <div class="card p-4">
+            <div class="loader"></div>
+            <img
+              src="../asset/img/gallery/yoga.JPG"
+              class="card-img-top"
+              alt="Gambar 8"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h5 class="font-bold card-title text-center mb-2">
+                I Gede Arya Mahesa Putra
+              </h5>
+              <p class="italic card-text text-center mx-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+                odio asperiores blanditiis voluptates quo consequuntur eum nisi,
+                a numquam nihil.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-6">
+      <div class="container mx-auto text-center">
+        <p>
+          © 2024 Keluarga Mahasiswa Hindu Dharma Universitas Teknologi Digital
+          Indonesia. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Script  -->
+    <script>
+      // Navbar
+      const menuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Loading
+      // Select all images in the gallery
+      const images = document.querySelectorAll(".card img");
+
+      images.forEach((img) => {
+        img.addEventListener("load", () => {
+          // Hide the loader when the image is loaded
+          const loader = img.previousElementSibling; // Assuming the loader is before the img
+          loader.classList.add("hidden");
+
+          // Show the image
+          img.classList.remove("hidden");
+        });
+      });
+    </script>
+
+    <script src="js/bootstrap.js"></script>
+    <script src="js/popper.min.js"></script>
+  </body>
+</html>

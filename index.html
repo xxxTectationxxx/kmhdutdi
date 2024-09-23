@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KMHD UTDI</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+
+  <body class="bg-gray-50 flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-gray-800">
+      <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div class="relative flex items-center justify-between h-16">
+          <div class="absolute inset-y-0 left-0 flex items-left sm:hidden">
+            <!-- Mobile menu button -->
+            <button
+              type="button"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+              id="mobile-menu-button"
+            >
+              <span class="sr-only">Open main menu</span>
+              <!-- Icon when menu is closed. -->
+              <svg
+                class="block h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+              <!-- Icon when menu is open. -->
+              <svg
+                class="hidden h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Logo aligned center on small screens, left on large screens -->
+          <div class="flex-1 flex items-center justify-center sm:justify-start">
+            <div class="flex-shrink-0 text-white text-lg font-bold">
+              KMHD UTDI
+            </div>
+          </div>
+
+          <!-- Navigation items, aligned to the right on large screens -->
+          <div class="hidden sm:block sm:ml-6 lg:ml-auto">
+            <div class="flex space-x-4">
+              <!-- Menu items -->
+              <a
+                href="#"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >Home</a
+              >
+              <a
+                href="about/index.html"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >About</a
+              >
+              <a
+                href="gallery/index.html"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >Gallery</a
+              >
+              <a
+                href="https://www.instagram.com/kmhd.utdi/"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >Contact</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu, hidden by default -->
+      <div class="sm:hidden hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          <a
+            href="#"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >Home</a
+          >
+          <a
+            href="about/index.html"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >About</a
+          >
+          <a
+            href="gallery/index.html"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >Gallery</a
+          >
+          <a
+            href="https://www.instagram.com/kmhd.utdi/"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+      <div id="carousel" class="relative mx-auto max-w-screen-xl">
+        <!-- Carousel wrapper -->
+        <div class="relative h-0 pb-[56.25%] overflow-hidden rounded-lg">
+          <!-- Carousel items -->
+          <div
+            id="carouselItems"
+            class="absolute top-0 left-0 w-full h-full transition-transform duration-700 ease-in-out flex"
+          >
+            <!-- Carousel items for images -->
+            <div class="carousel-item w-full flex-shrink-0">
+              <img
+                src="asset/img/pesona 1.JPG"
+                class="w-full h-full object-cover"
+                alt="Banner Image 1"
+              />
+            </div>
+            <div class="carousel-item w-full flex-shrink-0">
+              <img
+                src="asset/img/prambanan 1.jpg"
+                class="w-full h-full object-cover"
+                alt="Banner Image 1"
+              />
+            </div>
+            <div class="carousel-item w-full flex-shrink-0">
+              <img
+                src="asset/img/full squad.JPG"
+                class="w-full h-full object-cover"
+                alt="Banner Image 2"
+              />
+            </div>
+            <div class="carousel-item w-full flex-shrink-0">
+              <img
+                src="asset/img/wisuda 1.jpg"
+                class="w-full h-full object-cover"
+                alt="Banner Image 2"
+              />
+            </div>
+            <div class="carousel-item w-full flex-shrink-0">
+              <img
+                src="asset/img/prambanan 2.JPG"
+                class="w-full h-full object-cover"
+                alt="Banner Image 3"
+              />
+            </div>
+            <div class="carousel-item w-full flex-shrink-0">
+              <img
+                src="asset/img/wisuda 2.jpg"
+                class="w-full h-full object-cover"
+                alt="Banner Image 4"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider indicators -->
+        <div
+          class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-3 rtl:space-x-reverse"
+        >
+          <button
+            class="w-3 h-3 rounded-full transition-colors bg-black bg-opacity-50"
+            data-slide="0"
+          ></button>
+          <button
+            class="w-3 h-3 rounded-full transition-colors bg-black bg-opacity-10"
+            data-slide="1"
+          ></button>
+          <button
+            class="w-3 h-3 rounded-full transition-colors bg-black bg-opacity-10"
+            data-slide="2"
+          ></button>
+          <button
+            class="w-3 h-3 rounded-full transition-colors bg-black bg-opacity-10"
+            data-slide="3"
+          ></button>
+          <button
+            class="w-3 h-3 rounded-full transition-colors bg-black bg-opacity-10"
+            data-slide="4"
+          ></button>
+          <button
+            class="w-3 h-3 rounded-full transition-colors bg-black bg-opacity-10"
+            data-slide="5"
+          ></button>
+        </div>
+
+        <!-- Slider controls -->
+        <button
+          type="button"
+          class="absolute top-1/2 left-0 transform -translate-y-1/2 z-30 flex items-center justify-center w-10 h-10 rounded-full bg-black bg-opacity-10 mx-3 text-black text-opacity-80 hover:bg-black hover:bg-opacity-40 focus:outline-none"
+          id="prev"
+        >
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black bg-opacity-10 text-black text-opacity-80 hover:bg-opacity-40 focus:outline-none"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 19l-7-7 7-7"
+              ></path>
+            </svg>
+            <span class="sr-only">Previous</span>
+          </span>
+        </button>
+        <button
+          type="button"
+          class="absolute top-1/2 right-0 transform -translate-y-1/2 z-30 flex items-center justify-center w-10 h-10 rounded-full bg-black bg-opacity-10 mx-3 text-black text-opacity-80 hover:bg-black hover:bg-opacity-40 focus:outline-none"
+          id="next"
+        >
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black bg-opacity-10 text-black text-opacity-80 hover:bg-opacity-40 focus:outline-none"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+            <span class="sr-only">Next</span>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+      <!-- CTA Section -->
+      <section
+        class="relative mx-auto max-w-screen-xl h-80 flex items-center bg-gray-100"
+      >
+        <div class="w-full p-8 sm:p-16 lg:p-24 text-center">
+          <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
+            Bergabunglah Bersama Kami
+          </h2>
+
+          <p class="mt-4 text-gray-600">
+            Temukan lebih banyak informasi tentang kami di halaman About.
+            <br />Kami berkomitmen untuk memberikan nilai lebih dalam setiap
+            langkah agar bisa berguna bagi masyarakat.
+          </p>
+
+          <a
+            href="about/index.html"
+            class="mt-8 inline-block rounded border border-gray-800 bg-gray-800 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-gray-800 focus:outline-none focus:ring active:text-gray-800"
+          >
+            Informasi Lebih Lanjut
+          </a>
+        </div>
+      </section>
+
+      <!-- Testimoni -->
+      <section>
+        <!-- Slider Section -->
+        <div class="relative w-full max-w-screen-lg mx-auto py-8">
+          <h3 class="text-2xl font-bold text-center mb-6">Anggota Kami</h3>
+          <div class="overflow-hidden relative">
+            <div
+              id="slider"
+              class="flex transition-transform duration-500 ease-out"
+            >
+              <!-- Slide 1 -->
+              <div class="w-1/3 flex-shrink-0 p-4">
+                <div class="flex flex-col items-center text-center">
+                  <img
+                    src="asset/img/ig/arawidhi.jpg"
+                    alt="Foto 1"
+                    class="rounded-full w-32 h-32 object-cover"
+                  />
+                  <h2 class="text-lg font-semibold mt-4">Ara Widhi Astutik</h2>
+                  <p class="text-sm text-gray-500">Alumni Periode 2022/2023</p>
+                  <a
+                    href="https://instagram.com/arawidhi"
+                    class="text-blue-500"
+                    target="_blank"
+                    >@arawidhi</a
+                  >
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="w-1/3 flex-shrink-0 p-4">
+                <div class="flex flex-col items-center text-center">
+                  <img
+                    src="asset/img/ig/made arya.jpg"
+                    alt="Foto 2"
+                    class="rounded-full w-32 h-32 object-cover"
+                  />
+                  <h2 class="text-lg font-semibold mt-4">
+                    Made Arya Putra Wibawa
+                  </h2>
+                  <p class="text-sm text-gray-500">Alumni Periode 2024/2025</p>
+                  <a
+                    href="https://instagram.com/aryaputraa6_"
+                    class="text-blue-500"
+                    target="_blank"
+                    >@aryaputraa6_</a
+                  >
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="w-1/3 flex-shrink-0 p-4">
+                <div class="flex flex-col items-center text-center">
+                  <img
+                    src="asset/img/ig/Ni Luh Yasmi.jpg"
+                    alt="Foto 3"
+                    class="rounded-full w-32 h-32 object-cover"
+                  />
+                  <h2 class="text-lg font-semibold mt-4">Niluh Yasmiati</h2>
+                  <p class="text-sm text-gray-500">Alumni Periode 2023/2024</p>
+                  <a
+                    href="https://instagram.com/nlyasmi._"
+                    class="text-blue-500"
+                    target="_blank"
+                    >@nlyasmi._</a
+                  >
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="w-1/3 flex-shrink-0 p-4">
+                <div class="flex flex-col items-center text-center">
+                  <img
+                    src="asset/img/ig/linaCelse.jpg"
+                    alt="Foto 4"
+                    class="rounded-full w-32 h-32 object-cover"
+                  />
+                  <h2 class="text-lg font-semibold mt-4">
+                    Ni Putu Lina Celse Olivia
+                  </h2>
+                  <p class="text-sm text-gray-500">Alumni Periode 2023/2024</p>
+                  <a
+                    href="https://instagram.com/linaclsee_"
+                    class="text-blue-500"
+                    target="_blank"
+                    >@linaclsee_</a
+                  >
+                </div>
+              </div>
+
+              <!-- Slide 5 -->
+              <div class="w-1/3 flex-shrink-0 p-4">
+                <div class="flex flex-col items-center text-center">
+                  <img
+                    src="asset/img/ig/DewaAgustina.jpg"
+                    alt="Foto 5"
+                    class="rounded-full w-32 h-32 object-cover"
+                  />
+                  <h2 class="text-lg font-semibold mt-4">
+                    I Dewa Gede Agustina Dharma Putra
+                  </h2>
+                  <p class="text-sm text-gray-500">DPO Periode 2024/2025</p>
+                  <a
+                    href="https://instagram.com/dewa_agustina_14"
+                    class="text-blue-500"
+                    target="_blank"
+                    >@dewa_agustina_14</a
+                  >
+                </div>
+              </div>
+
+              <!-- Slide 6 -->
+              <div class="w-1/3 flex-shrink-0 p-4">
+                <div class="flex flex-col items-center text-center">
+                  <img
+                    src="asset/img/ig/bintang.jpg"
+                    alt="Foto 6"
+                    class="rounded-full w-32 h-32 object-cover"
+                  />
+                  <h2 class="text-lg font-semibold mt-4">
+                    I Gede Nengah Bintang Arta Jaya
+                  </h2>
+                  <p class="text-sm text-gray-500">
+                    Divisi Publikasi Periode 2024/2025
+                  </p>
+                  <a
+                    href="https://instagram.com/bintangarta"
+                    class="text-blue-500"
+                    target="_blank"
+                    >@bintangarta</a
+                  >
+                </div>
+              </div>
+
+              <!-- Slide 7 -->
+              <div class="w-1/3 flex-shrink-0 p-4">
+                <div class="flex flex-col items-center text-center">
+                  <img
+                    src="asset/img/ig/AryaMahesa.jpg"
+                    alt="Foto 7"
+                    class="rounded-full w-32 h-32 object-cover"
+                  />
+                  <h2 class="text-lg font-semibold mt-4">
+                    I Gede Arya Mahesa Putra
+                  </h2>
+                  <p class="text-sm text-gray-500">
+                    Divisi Keanggotaan Periode 2024/2025
+                  </p>
+                  <a
+                    href="https://instagram.com/aryaaspp_"
+                    class="text-blue-500"
+                    target="_blank"
+                    >@aryaaspp_</a
+                  >
+                </div>
+              </div>
+
+              <!-- Slide 8 -->
+              <div class="w-1/3 flex-shrink-0 p-4">
+                <div class="flex flex-col items-center text-center">
+                  <img
+                    src="asset/img/ig/AnggaWijaya.jpg"
+                    alt="Foto 8"
+                    class="rounded-full w-32 h-32 object-cover"
+                  />
+                  <h2 class="text-lg font-semibold mt-4">Angga Wijaya</h2>
+                  <p class="text-sm text-gray-500">
+                    Divisi Humas Periode 2024/2025
+                  </p>
+                  <a
+                    href="https://instagram.com/angga.wijay4"
+                    class="text-blue-500"
+                    target="_blank"
+                    >@angga.wijay4</a
+                  >
+                </div>
+              </div>
+
+              <!-- Slide 9 -->
+              <div class="w-1/3 flex-shrink-0 p-4">
+                <div class="flex flex-col items-center text-center">
+                  <img
+                    src="asset/img/ig/GilangTejaKrishna.jpg"
+                    alt="Foto 9"
+                    class="rounded-full w-32 h-32 object-cover"
+                  />
+                  <h2 class="text-lg font-semibold mt-4">
+                    I Putu Gede Gilang Teja Krishna
+                  </h2>
+                  <p class="text-sm text-gray-500">
+                    Divis Keanggotaan Periode 2024/2025
+                  </p>
+                  <a
+                    href="https://instagram.com/gilangtejakrishnaaa"
+                    class="text-blue-500"
+                    target="_blank"
+                    >@gilangtejakrishnaaa</a
+                  >
+                </div>
+              </div>
+
+              <!-- Slide 10 -->
+              <div class="w-1/3 flex-shrink-0 p-4">
+                <div class="flex flex-col items-center text-center">
+                  <img
+                    src="asset/img/ig/fierish.jpg"
+                    alt="Foto 10"
+                    class="rounded-full w-32 h-32 object-cover"
+                  />
+                  <h2 class="text-lg font-semibold mt-4">
+                    I Gede Agus Fierish Ananta
+                  </h2>
+                  <p class="text-sm text-gray-500">
+                    Bendahara Periode 2024/2025
+                  </p>
+                  <a
+                    href="https://instagram.com/fierish.yz"
+                    class="text-blue-500"
+                    target="_blank"
+                    >@fierish.yz</a
+                  >
+                </div>
+              </div>
+
+              <!-- Slide 11 -->
+              <div class="w-1/3 flex-shrink-0 p-4">
+                <div class="flex flex-col items-center text-center">
+                  <img
+                    src="asset/img/ig/Lintang.jpg"
+                    alt="Foto 11"
+                    class="rounded-full w-32 h-32 object-cover"
+                  />
+                  <h2 class="text-lg font-semibold mt-4">
+                    Gusti Ngurah Lintang Pamungkas
+                  </h2>
+                  <p class="text-sm text-gray-500">
+                    Sekretaris Periode 2024/2025
+                  </p>
+                  <a
+                    href="https://instagram.com/inikasz"
+                    class="text-blue-500"
+                    target="_blank"
+                    >@inikasz</a
+                  >
+                </div>
+              </div>
+
+              <!-- Slide 12 -->
+              <div class="w-1/3 flex-shrink-0 p-4">
+                <div class="flex flex-col items-center text-center">
+                  <img
+                    src="asset/img/ig/PrayogaAditya.jpg"
+                    alt="Foto 12"
+                    class="rounded-full w-32 h-32 object-cover"
+                  />
+                  <h2 class="text-lg font-semibold mt-4">
+                    I Nyoman Prayoga Aditya Dharma
+                  </h2>
+                  <p class="text-sm text-gray-500">
+                    Ketua Umum Periode 2024/2025
+                  </p>
+                  <a
+                    href="https://instagram.com/444yogaa_"
+                    class="text-blue-500"
+                    target="_blank"
+                    >@444yogaa_</a
+                  >
+                </div>
+              </div>
+
+              <!-- Slide 13 -->
+              <div class="w-1/3 flex-shrink-0 p-4">
+                <div class="flex flex-col items-center text-center">
+                  <img
+                    src="asset/img/ig/AryaMahesa.jpg"
+                    alt="Foto 13"
+                    class="rounded-full w-32 h-32 object-cover"
+                  />
+                  <h2 class="text-lg font-semibold mt-4">
+                    I Made Adhi Govala Jaya
+                  </h2>
+                  <p class="text-sm text-gray-500">
+                    Sekretaris Periode 2024/2025
+                  </p>
+                  <a
+                    href="https://instagram.com/aryaaspp_"
+                    class="text-blue-500"
+                    target="_blank"
+                    >@aryaaspp_</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider Controls -->
+          <div class="absolute inset-y-0 left-0 flex items-center">
+            <button
+              id="prevBtn"
+              class="bg-gray-800 text-white p-2 rounded-full"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="absolute inset-y-0 right-0 flex items-center">
+            <button
+              id="nextBtn"
+              class="bg-gray-800 text-white p-2 rounded-full"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800">
+      <div class="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+        <!-- <div class="text-center mb-8 flex flex-col items-center justify-center">
+          <h2 class="text-2xl font-bold text-white mb-6">Kontak Kami</h2>
+          <img
+            src="asset/img/ig/kmhd.jpg"
+            alt="Foto 1"
+            class="rounded-full w-32 h-32 object-cover"
+          />
+          <a href="https://www.instagram.com/kmhd.utdi/">
+            <h3 class="text-2xl font-bold text-white mt-4">@kmhd.utdi</h3>
+          </a>
+          <p class="mt-2 text-sm text-white">
+            Keluarga Mahasiswa Hindu Dharma Universitas Teknologi Digital
+            Indonesia
+          </p>
+        </div> -->
+
+        <div class="text-center text-white">
+          <p>
+            © 2024 Keluarga Mahasiswa Hindu Dharma Universitas Teknologi Digital
+            Indonesia. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script tetap sama -->
+    <script>
+      const menuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Carousel
+      const carouselItems = document.getElementById("carouselItems");
+      const indicators = document.querySelectorAll("[data-slide]");
+      const prevButton = document.getElementById("prev");
+      const nextButton = document.getElementById("next");
+
+      let currentIndex = 0;
+      const totalItems = indicators.length; // Jumlah gambar
+
+      // Fungsi untuk memperbarui tampilan carousel
+      function updateCarousel(index) {
+        const offset = -index * 100; // Menghitung offset berdasarkan indeks
+        carouselItems.style.transform = `translateX(${offset}%)`;
+
+        // Update indikator
+        indicators.forEach((indicator, idx) => {
+          indicator.classList.toggle("bg-opacity-50", idx === index);
+          indicator.classList.toggle("bg-opacity-10", idx !== index);
+        });
+      }
+
+      // Fungsi untuk pindah ke gambar berikutnya
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarousel(currentIndex);
+      }
+
+      // Fungsi untuk pindah ke gambar sebelumnya
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        updateCarousel(currentIndex);
+      }
+
+      // Event listener untuk tombol next dan prev
+      nextButton.addEventListener("click", nextSlide);
+      prevButton.addEventListener("click", prevSlide);
+
+      // Event listener untuk indikator
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener("click", () => {
+          currentIndex = index;
+          updateCarousel(currentIndex);
+        });
+      });
+
+      // Auto slide setiap 5 detik
+      setInterval(nextSlide, 5000);
+
+      // Inisialisasi carousel
+      updateCarousel(currentIndex);
+
+      // Testimoni
+      const slider = document.getElementById("slider");
+      let currentSlide = 0;
+
+      document.getElementById("nextBtn").addEventListener("click", () => {
+        const slides = document.querySelectorAll("#slider > div");
+        const visibleSlides = Math.min(3, slides.length); // Menampilkan maksimal 3 slide
+        if (currentSlide < slides.length - visibleSlides) {
+          currentSlide++;
+        } else {
+          currentSlide = 0;
+        }
+        slider.style.transform = `translateX(-${
+          currentSlide * (100 / visibleSlides)
+        }%)`;
+      });
+
+      document.getElementById("prevBtn").addEventListener("click", () => {
+        const slides = document.querySelectorAll("#slider > div");
+        const visibleSlides = Math.min(3, slides.length);
+        if (currentSlide > 0) {
+          currentSlide--;
+        } else {
+          currentSlide = slides.length - visibleSlides;
+        }
+        slider.style.transform = `translateX(-${
+          currentSlide * (100 / visibleSlides)
+        }%)`;
+      });
+    </script>
+
+    <!-- 
+    Home
+    Carousel,
+    CTa,
+    Nama dan IG
+
+    About
+
+    -->
+  </body>
+</html>

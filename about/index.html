@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About KMHD UTDI</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-gray-800">
+      <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div class="relative flex items-center justify-between h-16">
+          <div class="absolute inset-y-0 left-0 flex items-left sm:hidden">
+            <!-- Mobile menu button -->
+            <button
+              type="button"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+              id="mobile-menu-button"
+            >
+              <span class="sr-only">Open main menu</span>
+              <!-- Icon when menu is closed. -->
+              <svg
+                class="block h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+              <!-- Icon when menu is open. -->
+              <svg
+                class="hidden h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Logo aligned center on small screens, left on large screens -->
+          <div class="flex-1 flex items-center justify-center sm:justify-start">
+            <div class="flex-shrink-0 text-white text-lg font-bold">
+              KMHD UTDI
+            </div>
+          </div>
+
+          <!-- Navigation items, aligned to the right on large screens -->
+          <div class="hidden sm:block sm:ml-6 lg:ml-auto">
+            <div class="flex space-x-4">
+              <!-- Menu items -->
+              <a
+                href="../index.html"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >Home</a
+              >
+              <a
+                href="#"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >About</a
+              >
+              <a
+                href="../gallery/index.html"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >Gallery</a
+              >
+              <a
+                href="https://www.instagram.com/kmhd.utdi/"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >Contact</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu, hidden by default -->
+      <div class="sm:hidden hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          <a
+            href="../index.html"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >Home</a
+          >
+          <a
+            href="#"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >About</a
+          >
+          <a
+            href="../gallery/index.html"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >Gallery</a
+          >
+          <a
+            href="https://www.instagram.com/kmhd.utdi/"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+      <!-- Section: Pengertian -->
+      <section class="max-w-7xl mx-auto py-12 px-4">
+        <h1 class="text-4xl font-bold text-gray-800 mb-6 text-center">
+          Tentang KMHD UTDI
+        </h1>
+        <p class="text-lg text-gray-600 text-center leading-relaxed mb-10">
+          KMHD UTDI (Keluarga Mahasiswa Hindu Dharma) adalah Unit Kegiatan
+          Mahasiswa yang bertujuan untuk menggali, meningkatkan, dan mengembangkan
+          kreativitas mahasiswa Hindu di Universitas Teknologi Digital Indonesia.
+          Diresmikan sejak 17 Oktober 2012, KMHD UTDI berkomitmen untuk aktif
+          dalam berbagai kegiatan positif yang bermanfaat bagi mahasiswa,
+          universitas, dan masyarakat luas.
+        </p>
+      </section>
+  
+      <!-- Section: Logo UKM -->
+      <section class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+          <h2 class="text-3xl font-semibold text-gray-800 mb-6">Lambang UKM</h2>
+          <div class="mb-8">
+            <img
+              src="img/Logo KMHD UTDI.png"
+              alt="Lambang KMHD UTDI"
+              class="mx-auto mb-4 w-48"
+            />
+            <p class="text-lg text-gray-600">
+              Lambang UKM Keluarga Mahasiswa Hindu Dharma Universites Teknologi
+              Digital Indonesia terdiri dari beberapa bagian sebagai berikut :
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div>
+              <h3 class="text-xl font-bold text-gray-700">
+                Bunga Teratai dan Lingkaran
+              </h3>
+              <p class="text-gray-600">
+                Bunga Teratai merupakan simbol kesucian yang terdiri dari 5
+                kelopak yang memiliki makna panca satya. Panca Satya merupakan
+                ajaran kesetiaan, kebenaran dan kejujuran dalam agama Hindu.
+                Lingkaran memiliki arti satu kesatuan utuh anggota yang tidak
+                terpisahkan
+              </p>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-700">
+                Sinar yang dipancarkan
+              </h3>
+              <p class="text-gray-600">
+                Sinar yang dipancarkan memiliki arti seluruh anggota yang menjaga
+                keutuhan kmhd yang didasari swastika dan asta Aiswarya.
+              </p>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-700">
+                Asta aiswarya, Panca sradha, dan Swastika
+              </h3>
+              <p class="text-gray-600">
+                Asta aiswarya yaitu delapan sifat kemahakuasaan dari Ida Sang
+                Hyang Widhi.Panca sradha adalah Lima dasar keyakinan dalam Agama
+                Hindu. Swastika berarti kesejahteraan, kemakmuran atau
+                keberuntungan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <!-- Section: Program Kerja Tetap -->
+      <section class="max-w-7xl mx-auto py-12 px-4">
+        <h2 class="text-3xl font-semibold text-gray-800 mb-10 text-center">
+          Program Kerja Tetap
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <img
+              src="img/Keakraban.png"
+              alt="Menjalin Keakraban"
+              class="mx-auto mb-4 w-24 h-24"
+            />
+            <h3 class="text-xl font-bold text-gray-700 mb-2">Malam Keakraban</h3>
+            <p class="text-gray-600">
+              Menjalin keakraban sesama anggota dan merayakan wisuda antar
+              anggota.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <img
+              src="img/Sembahyang.png"
+              alt="Persembahyangan Bersama"
+              class="mx-auto mb-4 w-24 h-24"
+            />
+            <h3 class="text-xl font-bold text-gray-700 mb-2">
+              Persembahyangan Bersama
+            </h3>
+            <p class="text-gray-600">
+              Melakukan Kegiatan persembahyangan bersama pada hari-hari suci
+              seperti Purnama, Tilem, Saraswati, dan lainnya.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <img
+              src="img/Tirta Yatra.png"
+              alt="Tirta Yatra"
+              class="mx-auto mb-4 w-24 h-24"
+            />
+            <h3 class="text-xl font-bold text-gray-700 mb-2">Tirta Yatra</h3>
+            <p class="text-gray-600">
+              Melaksanakan tirta yatra ke pura-pura di Indonesia khususnya di
+              wilayah Yogyakarta.
+            </p>
+          </div>
+        </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 my-10">
+      <div class="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+          <div class="text-center text-white">
+              <p>
+                  © 2024 Keluarga Mahasiswa Hindu Dharma Universitas Teknologi Digital
+                  Indonesia. All Rights Reserved.
+              </p>
+          </div>
+      </div>
+  </footer>
+
+    <!-- Script  -->
+    <script>
+      // Navbar
+      const menuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
